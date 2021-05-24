@@ -1,0 +1,19 @@
+<h1>About Page</h1>
+
+<p>You entered this page at <%= @time %></p>
+
+<%= link_to 'Go to contact page', contact_path %>
+<%= link_to 'Go back to home', root_path  %>
+
+<p>Find a student</p>
+<form action="/about" method="get">
+  <input type="text" name="student_name">
+  <input type="submit">
+</form>
+
+<p>My list of students</p>
+<ul>
+  <% @students.each do |student| %>
+    <li><%= student %></li>
+  <% end %>
+</ul>
